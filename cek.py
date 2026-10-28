@@ -54,8 +54,18 @@ n = 0
 for mid, info in sorted(idx.items()):
     d = info["tarih"]
     if d and datetime.date.fromisoformat(d) > today: continue
+    fp = f"data/tff/{SEASON}/mac/{mid}.html"
+    if os.path.exists(fp):  # oynanmis ve kaydedilmis maci tekrar cekme
+        old = open(fp, "rb").read().decode("cp1254", "ignore")
+        if re.search(r'lblTakim1Skor[^>]*>\s*\d', old): continue
     b = get(f"https://www.tff.org/Default.aspx?pageId=29&macId={mid}")
     time.sleep(SLEEP)
     if b:
         open(f"data/tff/{SEASON}/mac/{mid}.html", "wb").write(b); n += 1
 print("kaydedilen mac sayfasi:", n)
+
+# 3) Ayristir ve temiz tablolari uret
+import subprocess, sys
+os.makedirs("data/temiz", exist_ok=True)
+subprocess.run([sys.executable, "parse.py", f"data/tff/{SEASON}", f"data/temiz/{SEASON}"], check=True)
+subprocess.run([sys.executable, "oyuncu.py", f"data/temiz/{SEASON}", SEASON, f"data/temiz/{SEASON}"], check=True)
