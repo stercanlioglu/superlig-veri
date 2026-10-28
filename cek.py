@@ -51,17 +51,19 @@ for w in range(1, 35):
 print("bulunan mac:", len(idx))
 json.dump(idx, open(f"data/tff/{SEASON}/index.json", "w"), indent=1)
 n = 0
+def oynandi(fp):
+    if not os.path.exists(fp): return False
+    return bool(re.search(r'lblTakim1Skor[^>]*>\s*\d', open(fp, "rb").read().decode("cp1254", "ignore")))
+oyn = [int(mid) for mid in idx if oynandi(f"data/tff/{SEASON}/mac/{mid}.html")]
+son_id = max(oyn) if oyn else 0   # maç numaraları hafta sırasıyla artıyor; en fazla ~2 hafta ilerisine bak
 for mid, info in sorted(idx.items()):
-    d = info["tarih"]
-    if d and datetime.date.fromisoformat(d) > today: continue
     fp = f"data/tff/{SEASON}/mac/{mid}.html"
-    if os.path.exists(fp):  # oynanmis ve kaydedilmis maci tekrar cekme
-        old = open(fp, "rb").read().decode("cp1254", "ignore")
-        if re.search(r'lblTakim1Skor[^>]*>\s*\d', old): continue
+    if oynandi(fp): continue
+    if son_id and int(mid) > son_id + 18: continue
     b = get(f"https://www.tff.org/Default.aspx?pageId=29&macId={mid}")
     time.sleep(SLEEP)
     if b:
-        open(f"data/tff/{SEASON}/mac/{mid}.html", "wb").write(b); n += 1
+        open(fp, "wb").write(b); n += 1
 print("kaydedilen mac sayfasi:", n)
 
 # 3) Ayristir ve temiz tablolari uret
