@@ -19,6 +19,9 @@ jobs:
           python-version: "3.12"
       - run: pip install requests beautifulsoup4 pandas numpy
       - run: python cek.py
+      - name: FotMob istatistikleri (engellenirse atlanır)
+        continue-on-error: true
+        run: python fotmob.py
       - name: Değişiklikleri kaydet
         run: |
           git config user.name "veri-bot"

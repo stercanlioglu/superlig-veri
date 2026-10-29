@@ -1,0 +1,71 @@
+tur,stat,baslik,alt_baslik,kategori
+oyuncu,goals,Top scorer,Penalty goals,Top Stat
+oyuncu,goal_assist,Assists,Expected assist (xA),Top Stat
+oyuncu,_goals_and_goal_assist,Goals + Assists,xG + xA,Top Stat
+oyuncu,rating,FotMob rating,Player of the Match,Top Stat
+oyuncu,mins_played,Minutes played,Total matches,Top Stat
+oyuncu,goals_per_90,Goals per 90,Goals,Attacking
+oyuncu,expected_goals,Expected goals (xG),Goals,Attacking
+oyuncu,expected_goals_per_90,Expected goals (xG) per 90,Goals per 90,Attacking
+oyuncu,expected_goalsontarget,Expected goals on target (xGOT),Goals,Attacking
+oyuncu,ontarget_scoring_att,Shots on target per 90,Shots on target,Attacking
+oyuncu,total_scoring_att,Shots per 90,Shot conversion rate,Attacking
+oyuncu,accurate_pass,Accurate passes per 90,Pass success,Attacking
+oyuncu,big_chance_created,Big chances created,Total assists,Attacking
+oyuncu,total_att_assist,Chances created,Chances created per 90,Attacking
+oyuncu,accurate_long_balls,Accurate long balls per 90,Successful long balls %,Attacking
+oyuncu,lbp_total,Line-breaking passes per 90,Line-breaking passes,Attacking
+oyuncu,expected_assists,Expected assist (xA),Assists,Attacking
+oyuncu,expected_assists_per_90,Expected assist (xA) per 90,Assists per 90,Attacking
+oyuncu,_expected_goals_and_expected_assists_per_90,xG + xA per 90,Goals + Assists per 90,Attacking
+oyuncu,won_contest,Successful dribbles per 90,Dribble percentage,Attacking
+oyuncu,big_chance_missed,Big chances missed,Shot conversion rate,Attacking
+oyuncu,penalty_won,Penalties won,Fouled per 90,Attacking
+oyuncu,defensive_contributions,Defensive actions per 90,Total defensive actions,Defending
+oyuncu,total_tackle,Tackles per 90,Total tackles,Defending
+oyuncu,interception,Interceptions per 90,Total interceptions,Defending
+oyuncu,effective_clearance,Clearances per 90,Total clearances,Defending
+oyuncu,outfielder_block,Blocks per 90,Total blocks,Defending
+oyuncu,ball_recovery,Recoveries per 90,Total recoveries,Defending
+oyuncu,penalty_conceded,Penalties conceded,Total matches,Defending
+oyuncu,poss_won_att_3rd,Possession won final 3rd per 90,Possession won midfield per 90,Defending
+oyuncu,clean_sheet,Clean sheets,Goals conceded,Goalkeeping
+oyuncu,_save_percentage,Save percentage,Goals conceded,Goalkeeping
+oyuncu,saves,Saves per 90,Total saves,Goalkeeping
+oyuncu,_goals_prevented,Goals prevented,Goals conceded,Goalkeeping
+oyuncu,goals_conceded,Goals conceded per 90,Goals conceded,Goalkeeping
+oyuncu,total_high_claim,High claims per 90,High claims,Goalkeeping
+oyuncu,total_keeper_sweeper,Sweeper actions per 90,Acted as sweeper,Goalkeeping
+oyuncu,penalty_save,Penalty saves,Penalties faced,Goalkeeping
+oyuncu,fouls,Fouls committed per 90,Yellow cards,Discipline
+oyuncu,yellow_card,Yellow cards,Red cards,Discipline
+oyuncu,red_card,Red cards,Yellow cards,Discipline
+takim,rating_team,FotMob rating,,Top Stat
+takim,goals_team_match,Goals per match,Total goals scored,Top Stat
+takim,goals_conceded_team_match,Goals conceded per match,Total goals conceded,Top Stat
+takim,possession_percentage_team,Average possession,Total goals scored,Top Stat
+takim,clean_sheet_team,Clean sheets,Total matches,Top Stat
+takim,squad_value_team,Squad value,,Top Stat
+takim,expected_goals_team,Expected goals,Goals,Attacking
+takim,_xg_diff_team,xG difference,Goal difference,Attacking
+takim,ontarget_scoring_att_team,Shots on target per match,Shot conversion rate,Attacking
+takim,big_chance_team,Big chances,Total goals,Attacking
+takim,big_chance_missed_team,Big chances missed,Total goals,Attacking
+takim,accurate_pass_team,Accurate passes per match,Pass success,Attacking
+takim,accurate_long_balls_team,Accurate long balls per match,Successful long balls,Attacking
+takim,accurate_cross_team,Accurate crosses per match,Cross success,Attacking
+takim,penalty_won_team,Penalties awarded,Conversion rate,Attacking
+takim,touches_in_opp_box_team,Touches in opposition box,,Attacking
+takim,corner_taken_team,Corners,,Attacking
+takim,_set_piece_goals_team,Set piece goals,xG set play,Attacking
+takim,expected_goals_conceded_team,xG conceded,Goals conceded,Defending
+takim,interception_team,Interceptions per match,Total interceptions,Defending
+takim,total_tackle_team,Tackles per match,Total tackles,Defending
+takim,effective_clearance_team,Clearances per match,Total clearances,Defending
+takim,poss_won_att_3rd_team,Possession won final 3rd per match,Possession won midfield,Defending
+takim,_set_piece_goals_conceded_team,Set piece goals conceded,Set piece xG conceded,Defending
+takim,penalty_conceded_team,Penalties conceded,Penalty goals conceded,Defending
+takim,saves_team,Saves per match,Total saves,Defending
+takim,fk_foul_lost_team,Fouls per match,Yellow cards,Discipline
+takim,total_yel_card_team,Yellow cards,Red cards,Discipline
+takim,total_red_card_team,Red cards,Yellow cards,Discipline

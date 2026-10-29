@@ -123,10 +123,14 @@ J["live"]["test"] = lt
 J["live"]["rows"] = [{"date": r.date.date().isoformat(), "home": r.home, "away": r.away, "hg": int(r.hg), "ag": int(r.ag), "res": int(r.res), "has_dc": bool(r.has_dc),
                       "odds": [float(r.AvgH), float(r.AvgD), float(r.AvgA)], "p": [round(float(x), 3) for x in r.p], "pm": [round(float(x), 3) for x in r.pm]} for r in L.itertuples()]
 
-# ---------- 5. xG vekili (isabetli şut) ----------
-c = fd[fd.season == SEZON].copy(); c["hx"] = XG_C * c.HST; c["ax"] = XG_C * c.AST
+# ---------- 5. xG: football-data gerçek xG (HxG/AxG) varsa o, yoksa isabetli şut vekili ----------
+c = fd[fd.season == SEZON].copy()
+gercek = "HxG" in c and c.HxG.notna().all() and "AxG" in c and c.AxG.notna().all()
+if gercek: c["hx"], c["ax"] = c.HxG, c.AxG
+else: c["hx"], c["ax"] = XG_C * c.HST, XG_C * c.AST
 J["xg"] = {"xg_total": round(float(c.hx.sum() + c.ax.sum()), 1), "goals_total": int(c.FTHG.sum() + c.FTAG.sum()),
-           "r_diff": round(float(np.corrcoef(c.hx - c.ax, c.FTHG - c.FTAG)[0, 1]), 2), "n": int(len(c)), "c": [XG_C, 0.0]}
+           "r_diff": round(float(np.corrcoef(c.hx - c.ax, c.FTHG - c.FTAG)[0, 1]), 2), "n": int(len(c)), "c": [XG_C, 0.0],
+           "src": "gercek" if gercek else "vekil"}
 xt = []
 for t in sorted(set(c.HomeTeam)):
     h, a = c[c.HomeTeam == t], c[c.AwayTeam == t]; m = len(h) + len(a)
@@ -165,9 +169,24 @@ el = R.dk >= 180
 pct = lambda s: s[el].rank(pct=True).reindex(s.index).fillna(0)
 R["puan"] = (60 * pct(R.npg90) + 30 * pct(R.sure) - 10 * pct(R.kart90) + 10).round(0).clip(0, 100); R.loc[~el, "puan"] = None
 R = R.sort_values(["puan", "dk"], ascending=False, na_position="last")
-J["pg"] = {"matches": matches, "pcols": ["id", "ad", "takim", "mac", "ilk11", "dk", "gol", "pen", "kafa", "sari", "cift", "kirmizi", "son", "puan", "sure"],
+
+# FotMob (fotmob.py çıktısı varsa): oyuncuya xG/xA/not, takıma topa sahip olma/kadro değeri/büyük fırsat
+FMD = f"{ROOT}/data/fotmob/{SEZON}"; fmo = {}; J.pop("fm", None)
+if os.path.exists(f"{FMD}/oyuncu.csv"):
+    import eslestir
+    FO, FT = pd.read_csv(f"{FMD}/oyuncu.csv"), pd.read_csv(f"{FMD}/takim.csv")
+    adlar = [t["name"] for t in T]; idm = {r.takim_id: eslestir.takim(r.takim, adlar) for r in FT.itertuples()}
+    es = eslestir.oyuncular([(r.oyuncu_id, r.oyuncu, idm.get(r.takim_id), r.dakika) for r in FO.itertuples()],
+                            [(r.id, r.ad, r.takim, r.dk) for r in R.itertuples()])
+    fr = FO.set_index("oyuncu_id"); v = lambda x: None if pd.isna(x) else float(x)
+    fmo = {tk: (v(fr.at[fk, "expected_goals"]), v(fr.at[fk, "expected_assists"]), v(fr.at[fk, "rating"])) for tk, fk in es.items()}
+    J["fm"] = {"tarih": json.load(open(f"{FMD}/bilgi.json"))["cekildi"],
+               "teams": {idm[r.takim_id]: {"xg": v(r.expected_goals_team), "xga": v(r.expected_goals_conceded_team), "pos": v(r.possession_percentage_team),
+                                           "val": v(r.squad_value_team), "rt": v(r.rating_team), "bc": v(r.big_chance_team)} for r in FT.itertuples() if idm.get(r.takim_id)}}
+    print("FotMob eşleşen oyuncu:", len(es), "/", len(R))
+J["pg"] = {"matches": matches, "pcols": ["id", "ad", "takim", "mac", "ilk11", "dk", "gol", "pen", "kafa", "sari", "cift", "kirmizi", "son", "puan", "sure", "xg", "xa", "rt"],
            "players": [[r.id, r.ad, r.takim, r.mac, r.ilk11, r.dk, r.gol, r.pen, r.kafa, r.sari, r.cift, r.kirmizi, r.son,
-                        None if pd.isna(r.puan) else int(r.puan), round(float(r.sure), 2)] for r in R.itertuples()],
+                        None if pd.isna(r.puan) else int(r.puan), round(float(r.sure), 2), *fmo.get(r.id, (None, None, None))] for r in R.itertuples()],
            "tm_n": {t: len(v) for t, v in tm.items()}, "prior": round(float(prior), 3)}
 
 # ---------- 7. sayfaya yaz: veri + metindeki hafta/tarih ifadeleri ----------
@@ -187,7 +206,7 @@ print("hafta:", HAFTA, "son maç:", TARIH, "oyuncu:", len(R))
 if Y == H:
     print("değişiklik yok; index.html aynen kaldı")
 else:
-    open(f"{ROOT}/index.html", "w", encoding="utf-8", newline="\n").write(sifrele.sifrele(Y, USER, PW))
+    open(f"{ROOT}/index.html", "w", encoding="utf-8", newline="\n").write(sifrele.sifrele(Y, USER, PW, sifrele.tuz(eski_sayfa)))
     print("index.html yeniden şifrelendi")
 if os.environ.get("SL_ACIK_YAZ"):   # yerelde kontrol için şifresiz kopya (depoya girmez, .gitignore)
     open(f"{ROOT}/uygulama_acik.html", "w", encoding="utf-8", newline="\n").write(Y)

@@ -37,9 +37,13 @@ document.getElementById('f').addEventListener('submit',async function(ev){ev.pre
  show(r[1])});
 </script></body></html>'''
 
-def sifrele(html, user, pw):
-    """Düz HTML (str) -> giriş ekranlı şifreli sayfa (str)."""
-    salt = os.urandom(16); iv = os.urandom(12)
+def tuz(page):
+    """Şifreli sayfadaki salt. Aynı salt'la yeniden şifrelenirse 'Bu cihazda hatırla' ile kayıtlı anahtar geçerli kalır."""
+    return base64.b64decode(re.search(r"\bS='([^']*)'", page).group(1))
+
+def sifrele(html, user, pw, salt=None):
+    """Düz HTML (str) -> giriş ekranlı şifreli sayfa (str). IV her seferinde yeni (GCM için şart)."""
+    salt = salt or os.urandom(16); iv = os.urandom(12)
     ct = AESGCM(anahtar(user, pw, salt)).encrypt(iv, html.encode('utf-8'), None)
     b = lambda x: base64.b64encode(x).decode()
     return PAGE.replace('__SALT__', b(salt)).replace('__IV__', b(iv)).replace('__CT__', b(ct)).replace('__IT__', str(IT))
@@ -57,6 +61,10 @@ if __name__ == '__main__':
         out = coz(open(src, encoding='utf-8').read(), user, pw)
     else:
         user, pw = a[0], a[1]; src = a[2] if len(a) > 2 else 'uygulama_acik.html'; dst = a[3] if len(a) > 3 else 'index.html'
-        out = sifrele(open(src, encoding='utf-8').read(), user, pw)
+        eski = None
+        if os.path.exists(dst):   # mevcut sayfanın salt'ını koru (kayıtlı girişler bozulmasın)
+            try: eski = tuz(open(dst, encoding='utf-8').read())
+            except Exception: pass
+        out = sifrele(open(src, encoding='utf-8').read(), user, pw, eski)
     open(dst, 'w', encoding='utf-8', newline='\n').write(out)
     print(dst, len(out))
