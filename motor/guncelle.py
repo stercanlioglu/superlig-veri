@@ -189,6 +189,14 @@ J["pg"] = {"matches": matches, "pcols": ["id", "ad", "takim", "mac", "ilk11", "d
                         None if pd.isna(r.puan) else int(r.puan), round(float(r.sure), 2), *fmo.get(r.id, (None, None, None))] for r in R.itertuples()],
            "tm_n": {t: len(v) for t, v in tm.items()}, "prior": round(float(prior), 3)}
 
+# ---------- Nesine güncel oranları (nesine.py çıktısı varsa) ----------
+NP = f"{ROOT}/data/nesine/{SEZON}/guncel.csv"; J.pop("nesine", None)
+if os.path.exists(NP) and os.path.getsize(NP) > 10:
+    NS = pd.read_csv(NP); f = lambda *c: [None if pd.isna(x) else float(x) for x in c]
+    J["nesine"] = {"tarih": str(NS.cekildi.max()), "maclar": [{"t": r.tarih, "s": r.saat, "h": r.ev, "a": r.dep, "ms": f(r.ms1, r.msx, r.ms2),
+                   "au15": f(r.alt15, r.ust15), "au25": f(r.alt25, r.ust25), "au35": f(r.alt35, r.ust35), "cs": f(r.cs1x, r.cs12, r.csx2)} for r in NS.itertuples()]}
+    print("Nesine maç:", len(NS))
+
 # ---------- 7. sayfaya yaz: veri + metindeki hafta/tarih ifadeleri ----------
 veri = json.dumps(J, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 Y = re.sub(RX, lambda m: m.group(1) + veri + m.group(3), H, count=1, flags=re.S)
