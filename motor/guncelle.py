@@ -68,7 +68,7 @@ for i, r in df.iterrows():
 P = pd.DataFrame(rows)
 os.makedirs(os.path.dirname(CACHE), exist_ok=True)
 pd.DataFrame({"key": P.key, **{f"{n}_{s}": P[n].map(lambda v, j=j: float(v[j])) for n in ("p", "pe", "pdc") for j, s in enumerate("hda")},
-              "lh": P.lh, "la": P.la, "has_dc": P.has_dc.astype(int)}).to_csv(CACHE, index=False)
+              "lh": P.lh, "la": P.la, "has_dc": P.has_dc.astype(int)}).to_csv(CACHE, index=False, float_format="%.12g")  # sabit biçim: tekrar yazınca değişmesin
 print("tahmin:", len(P), "yeni hesaplanan:", yeni)
 
 # ---------- 3. mevcut uygulamayı çöz ----------
