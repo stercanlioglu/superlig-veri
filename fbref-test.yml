@@ -1,0 +1,22 @@
+name: fbref-test
+on:
+  workflow_dispatch:
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests beautifulsoup4 pandas lxml html5lib
+      - run: python fbref.py
+      - name: Kaydet
+        run: |
+          git config user.name "fbref-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/fbref || true
+          git diff --cached --quiet || git commit -m "fbref verisi $(date -u +%F)"
+          git push
