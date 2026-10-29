@@ -7,7 +7,7 @@ def sade(s):
     return re.sub(r"[^a-z ]", " ", s).split()
 
 FM_TAKIM = {"amed sportif": "Amedspor", "basaksehir": "Buyuksehyr", "goztepe": "Goztep", "corum fk": "Corum", "erzurumspor fk": "Erzurum BB",
-            "gaziantep fk": "Gaziantep", "rizespor": "Rizespor", "caykur rizespor": "Rizespor"}
+            "gaziantep fk": "Gaziantep", "rizespor": "Rizespor", "caykur rizespor": "Rizespor", "erzurumspor": "Erzurum BB"}
 
 def takim(fm_ad, model_adlari):
     k = " ".join(sade(fm_ad))

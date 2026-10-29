@@ -1,0 +1,171 @@
+{
+ "cekildi": "2026-10-29 23:53 UTC",
+ "maclar": [
+  {
+   "mid": "A9cINRae",
+   "tarih": "2026-10-30 17:00",
+   "ev": "Konyaspor",
+   "dep": "Galatasaray",
+   "ev_ad": "Konyaspor",
+   "dep_ad": "Galatasaray",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/konyaspor-YazuCbCE/galatasaray-riaqqurF/haberler/?mid=A9cINRae",
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Konyaspor",
+     "oyuncu": "Adil Demirbağ",
+     "durum": "yok",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": "Galatasaray",
+     "oyuncu": "Abdülkerim Bardakçı",
+     "durum": "yok",
+     "neden": "ceza"
+    }
+   ]
+  },
+  {
+   "mid": "dpnKsmiR",
+   "tarih": "2026-10-31 10:30",
+   "ev": "Erzurum BB",
+   "dep": "Corum",
+   "ev_ad": "Erzurumspor",
+   "dep_ad": "Çorum",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/erzurumspor-fk-xQZ3CpVE/corum-fk-0vne21BK/haberler/?mid=dpnKsmiR",
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Mustafa Yumlu",
+     "durum": "yok",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Serdar Saatçı",
+     "durum": "yok",
+     "neden": "diğer"
+    }
+   ]
+  },
+  {
+   "mid": "lKrCq9ME",
+   "tarih": "2026-10-31 13:00",
+   "ev": "Kocaelispor",
+   "dep": "Rizespor",
+   "ev_ad": "Kocaelispor",
+   "dep_ad": "Rizespor",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/kocaelispor-hfvQIzKf/rizespor-EFRnJdkr/haberler/?mid=lKrCq9ME",
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Kocaelispor",
+     "oyuncu": "Massadio Haidara",
+     "durum": "yok",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": "Kocaelispor",
+     "oyuncu": "Tanguy Zoukrou",
+     "durum": "yok",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": "Rizespor",
+     "oyuncu": "Ahmed Kutucu",
+     "durum": "yok",
+     "neden": "diğer"
+    }
+   ]
+  },
+  {
+   "mid": "rNeQL5U7",
+   "tarih": "2026-10-31 16:00",
+   "ev": "Fenerbahce",
+   "dep": "Goztep",
+   "ev_ad": "Fenerbahçe",
+   "dep_ad": "Göztepe",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/fenerbahce-MsbmracL/goztepe-0MJlDkrA/haberler/?mid=rNeQL5U7",
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Archie Brown",
+     "durum": "yok",
+     "neden": "ceza"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Allan Godoi",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
+  },
+  {
+   "mid": "W03vV97L",
+   "tarih": "2026-11-01 10:30",
+   "ev": "Amedspor",
+   "dep": "Eyupspor",
+   "ev_ad": "Amedspor",
+   "dep_ad": "Eyüpspor",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/amedspor-EHdgkFvm/eyupspor-276zKCgt/haberler/?mid=W03vV97L",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "bm5WWVx9",
+   "tarih": "2026-11-01 13:00",
+   "ev": "Buyuksehyr",
+   "dep": "Samsunspor",
+   "ev_ad": "Başakşehir",
+   "dep_ad": "Samsunspor",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/basaksehir-YqP5NmC1/samsunspor-pSc6z7bf/haberler/?mid=bm5WWVx9",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "vZfwBlGk",
+   "tarih": "2026-11-01 13:00",
+   "ev": "Trabzonspor",
+   "dep": "Gaziantep",
+   "ev_ad": "Trabzonspor",
+   "dep_ad": "Gaziantep FK",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/trabzonspor-MmsYDc03/gaziantep-fk-ITkIKZ7q/haberler/?mid=vZfwBlGk",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "nabo9Sp2",
+   "tarih": "2026-11-01 16:00",
+   "ev": "Kasimpasa",
+   "dep": "Besiktas",
+   "ev_ad": "Kasımpaşa",
+   "dep_ad": "Beşiktaş",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/kasimpasa-dOlaIG4l/besiktas-IDmErJCR/haberler/?mid=nabo9Sp2",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "2qfAPmVr",
+   "tarih": "2026-11-02 17:00",
+   "ev": "Genclerbirligi",
+   "dep": "Alanyaspor",
+   "ev_ad": "Gençlerbirliği",
+   "dep_ad": "Alanyaspor",
+   "hafta": "10. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/genclerbirligi-GOPqBIRK/alanyaspor-IcN8oPcJ/haberler/?mid=2qfAPmVr",
+   "onizleme": false,
+   "eksik": []
+  }
+ ]
+}

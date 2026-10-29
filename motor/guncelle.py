@@ -198,8 +198,51 @@ if os.path.exists(NP) and os.path.getsize(NP) > 10:
                    "iy": f(*(getattr(r, c, None) for c in ("iy1", "iyx", "iy2"))), "iyau15": f(*(getattr(r, c, None) for c in ("iyalt15", "iyust15")))} for r in NS.itertuples()]}
     print("Nesine maç:", len(NS))
 
+# ---------- Haber etkisi: Livesport önizlemesindeki eksik oyuncular (livesport.py çıktısı varsa) ----------
+# Hücumcu eksik: kendi gol beklentisi × (1 − W × xG+xA payı). Defans/kaleci eksik: rakip gol beklentisi × (1 + W × k × süre payı).
+# W = 0,5 (düşük ağırlık: yerine oynayanın ham etkinin yarısını telafi ettiği varsayımı), şüpheli oyuncu yarım, takım başına en çok %12.
+# Ağırlıklar test edilmedi (geçmiş haber verisi yok); bilinçli olarak küçük tutuldu.
+HABER_W, K_DEF, K_GK, TAVAN = 0.5, 0.12, 0.20, 0.12
+LP = f"{ROOT}/data/livesport/{SEZON}/haberler.json"; J.pop("haber", None)
+if os.path.exists(LP) and os.path.exists(f"{FMD}/oyuncu.csv"):
+    import eslestir
+    LS = json.load(open(LP, encoding="utf-8")); FO = pd.read_csv(f"{FMD}/oyuncu.csv"); FT = pd.read_csv(f"{FMD}/takim.csv")
+    idm = {r.takim_id: eslestir.takim(r.takim, [t["name"] for t in T]) for r in FT.itertuples()}
+    FO["model"] = FO.takim_id.map(idm); tmac = {idm[r.takim_id]: r.mac for r in FT.itertuples() if idm.get(r.takim_id)}
+    uret = FO.assign(u=FO.expected_goals.fillna(0) + FO.expected_assists.fillna(0)).groupby("model").u.sum()
+    def bul(ad, takimlar):
+        s = eslestir.sade(ad); best = None
+        for r in FO[FO.model.isin(takimlar)].itertuples():
+            u = eslestir._uyum(s, eslestir.sade(r.oyuncu))
+            if u >= 0.5 and s[-1] in [x[:len(s[-1])] for x in eslestir.sade(r.oyuncu)] and (best is None or u > best[0]): best = (u, r)
+        return best[1] if best else None
+    grup = lambda p: "kaleci" if p == 11 else "defans" if 30 <= p < 40 else "forvet" if p >= 100 else "orta saha"
+    hm = []
+    for m in LS["maclar"]:
+        if not m.get("onizleme"): continue
+        carp = {m["ev"]: 1.0, m["dep"]: 1.0}; satir = []
+        for e in m["eksik"]:
+            r = bul(e["oyuncu"], [e["takim"]] if e["takim"] else [m["ev"], m["dep"]])
+            yarim = 0.5 if e["durum"] == "supheli" else 1.0
+            x = {"oyuncu": e["oyuncu"], "durum": e["durum"], "neden": e["neden"], "takim": e["takim"] or (r.model if r is not None else None)}
+            if r is None:
+                x.update(not_="bu sezon ligde oynamadı (FotMob'da kayıt yok) → etkisi yok", etki=0.0); satir.append(x); continue
+            tk = r.model; rakip = m["dep"] if tk == m["ev"] else m["ev"]
+            pay = (0 if pd.isna(r.expected_goals) else r.expected_goals) + (0 if pd.isna(r.expected_assists) else r.expected_assists)
+            pay = pay / uret.get(tk, 1) if uret.get(tk, 0) > 0 else 0
+            sure = min(1.0, r.dakika / (90 * tmac.get(tk, 1))); g = grup(int(r.pozisyon) if pd.notna(r.pozisyon) else 0)
+            att = HABER_W * yarim * pay; dfn = HABER_W * yarim * (K_GK if g == "kaleci" else K_DEF if g == "defans" else 0) * sure
+            carp[tk] *= (1 - att); carp[rakip] *= (1 + dfn)
+            x.update(pozisyon=g, dakika=int(r.dakika), sure=round(sure, 2), xg=0.0 if pd.isna(r.expected_goals) else float(r.expected_goals),
+                     xa=0.0 if pd.isna(r.expected_assists) else float(r.expected_assists), pay=round(pay, 3),
+                     etki_hucum=round(-att, 3), etki_rakip=round(dfn, 3)); satir.append(x)
+        for t in carp: carp[t] = float(min(1 + TAVAN, max(1 - TAVAN, carp[t])))
+        hm.append({"h": m["ev"], "a": m["dep"], "t": m["tarih"], "url": m["url"], "eksik": satir, "lh": round(carp[m["ev"]], 4), "la": round(carp[m["dep"]], 4)})
+    J["haber"] = {"tarih": LS["cekildi"], "w": HABER_W, "maclar": hm}
+    print("haber etkisi:", [(x["h"], x["a"], x["lh"], x["la"]) for x in hm])
+
 # ---------- 7. sayfaya yaz: veri + metindeki hafta/tarih ifadeleri ----------
-veri = json.dumps(J, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+veri = json.dumps(J, ensure_ascii=False, separators=(",", ":"), allow_nan=False).replace("</", "<\\/")   # NaN sayfayı bozar
 Y = re.sub(RX, lambda m: m.group(1) + veri + m.group(3), H, count=1, flags=re.S)
 nS = len(cur)
 for pat, rep in [(r"\d+ \S+ 20\d\d itibarıyla güncel \(\d+\. hafta dahil\)", f"{TARIH} itibarıyla güncel ({HAFTA}. hafta dahil)"),
