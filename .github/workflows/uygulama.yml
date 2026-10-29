@@ -1,0 +1,41 @@
+name: Uygulama güncelle
+
+# Gece veri çekme işi bitince modeli yeniden kurar, index.html'i yeniden şifreler.
+on:
+  workflow_run:
+    workflows: ["Süper Lig veri"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: uygulama
+  cancel-in-progress: false
+
+jobs:
+  guncelle:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install numpy pandas scipy cryptography
+      - name: Modeli kur ve sayfayı şifrele
+        env:
+          SL_KULLANICI: ${{ secrets.SL_KULLANICI }}
+          SL_SIFRE: ${{ secrets.SL_SIFRE }}
+        run: python motor/guncelle.py
+      - name: Değişiklikleri kaydet
+        run: |
+          git config user.name "veri-bot"
+          git config user.email "veri-bot@users.noreply.github.com"
+          git add index.html data/model
+          git diff --cached --quiet || git commit -m "uygulama güncellendi $(date -u +%F)"
+          git push

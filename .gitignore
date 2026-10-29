@@ -1,0 +1,4 @@
+# Şifresiz uygulama asla depoya girmesin (depo public)
+uygulama_acik.html
+superlig-motoru-tek-dosya.html
+__pycache__/
