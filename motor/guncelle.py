@@ -194,7 +194,8 @@ NP = f"{ROOT}/data/nesine/{SEZON}/guncel.csv"; J.pop("nesine", None)
 if os.path.exists(NP) and os.path.getsize(NP) > 10:
     NS = pd.read_csv(NP); f = lambda *c: [None if pd.isna(x) else float(x) for x in c]
     J["nesine"] = {"tarih": str(NS.cekildi.max()), "maclar": [{"t": r.tarih, "s": r.saat, "h": r.ev, "a": r.dep, "ms": f(r.ms1, r.msx, r.ms2),
-                   "au15": f(r.alt15, r.ust15), "au25": f(r.alt25, r.ust25), "au35": f(r.alt35, r.ust35), "cs": f(r.cs1x, r.cs12, r.csx2)} for r in NS.itertuples()]}
+                   "au15": f(r.alt15, r.ust15), "au25": f(r.alt25, r.ust25), "au35": f(r.alt35, r.ust35), "cs": f(r.cs1x, r.cs12, r.csx2),
+                   "iy": f(*(getattr(r, c, None) for c in ("iy1", "iyx", "iy2"))), "iyau15": f(*(getattr(r, c, None) for c in ("iyalt15", "iyust15")))} for r in NS.itertuples()]}
     print("Nesine maç:", len(NS))
 
 # ---------- 7. sayfaya yaz: veri + metindeki hafta/tarih ifadeleri ----------

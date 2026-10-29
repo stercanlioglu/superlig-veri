@@ -1,6 +1,7 @@
 # Nesine iddaa bülteninden Süper Lig maç oranları -> data/nesine/<SEZON>/{guncel,gecmis}.csv
 # Tek istek: www.nesine.com/iddaa sayfasının kullandığı açık bülten (cdnbulten.nesine.com). robots.txt: izinli.
 # Pazar kodları: 1 = MS 1/X/2, 11/12/13 = Alt/Üst 1,5/2,5/3,5 (önce Alt, sonra Üst; modelle doğrulandı).
+# 7 = İlk yarı 1/X/2, 14 = İlk yarı Alt/Üst 1,5 (modelin ilk yarı olasılıklarıyla doğrulandı).
 # 3 = Çifte şans (seçenek sırası doğrulanmadı, uygulamada gösterilmiyor). Karşılıklı gol büyük ihtimalle 38 (doğrulanmadı).
 # Diğer tüm pazarlar ham olarak "ham" sütununda saklanır (kod|çizgi|oranlar).
 import requests, pandas as pd, json, os, sys, time
@@ -32,6 +33,7 @@ for e in ea:
                  "ms1": g((1, 0.0), 0), "msx": g((1, 0.0), 1), "ms2": g((1, 0.0), 2),
                  "cs1x": g((3, 0.0), 0), "cs12": g((3, 0.0), 1), "csx2": g((3, 0.0), 2),
                  "alt15": g((11, 1.5), 0), "ust15": g((11, 1.5), 1), "alt25": g((12, 2.5), 0), "ust25": g((12, 2.5), 1), "alt35": g((13, 3.5), 0), "ust35": g((13, 3.5), 1),
+                 "iy1": g((7, 0.0), 0), "iyx": g((7, 0.0), 1), "iy2": g((7, 0.0), 2), "iyalt15": g((14, 1.5), 0), "iyust15": g((14, 1.5), 1),
                  "ham": json.dumps({f"{k[0]}|{k[1]}": v for k, v in mk.items()}, separators=(",", ":")), "cekildi": simdi})
 G = pd.DataFrame(rows).sort_values(["tarih", "saat", "ev"]) if rows else pd.DataFrame()
 G.to_csv(f"{OUT}/guncel.csv", index=False)
