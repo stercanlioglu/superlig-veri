@@ -6,6 +6,9 @@ on:
     workflows: ["Süper Lig veri"]
     types: [completed]
   workflow_dispatch:
+  push:                 # elle tetikleme: tetik.txt değiştirilip push edilince
+    branches: [main]
+    paths: [tetik.txt]
 
 permissions:
   contents: write
@@ -16,7 +19,7 @@ concurrency:
 
 jobs:
   guncelle:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
