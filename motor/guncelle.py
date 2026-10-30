@@ -241,9 +241,22 @@ if os.path.exists(LP) and os.path.exists(f"{FMD}/oyuncu.csv"):
     J["haber"] = {"tarih": LS["cekildi"], "w": HABER_W, "maclar": hm}
     print("haber etkisi:", [(x["h"], x["a"], x["lh"], x["la"]) for x in hm])
 
+# ---------- Görünen takım adları: motor football-data kısaltmalarıyla çalışır, uygulamaya Türkçe adlar gider ----------
+AD = {"Ad. Demirspor": "Adana Demirspor", "Ankaragucu": "Ankaragücü", "Besiktas": "Beşiktaş", "Buyuksehyr": "Başakşehir", "Corum": "Çorum FK",
+      "Erzurum BB": "Erzurumspor FK", "Eyupspor": "Eyüpspor", "Fenerbahce": "Fenerbahçe", "Gaziantep": "Gaziantep FK", "Genclerbirligi": "Gençlerbirliği",
+      "Goztep": "Göztepe", "Istanbulspor": "İstanbulspor", "Karagumruk": "Fatih Karagümrük", "Kasimpasa": "Kasımpaşa", "Umraniyespor": "Ümraniyespor"}
+def adlandir(o):   # yalnızca tam eşleşen metinler ve sözlük anahtarları değişir (tekrar uygulanabilir)
+    if isinstance(o, str): return AD.get(o, o)
+    if isinstance(o, list): return [adlandir(x) for x in o]
+    if isinstance(o, dict): return {AD.get(k, k): adlandir(v) for k, v in o.items()}
+    return o
+J = adlandir(J)
+
 # ---------- 7. sayfaya yaz: veri + metindeki hafta/tarih ifadeleri ----------
 veri = json.dumps(J, ensure_ascii=False, separators=(",", ":"), allow_nan=False).replace("</", "<\\/")   # NaN sayfayı bozar
 Y = re.sub(RX, lambda m: m.group(1) + veri + m.group(3), H, count=1, flags=re.S)
+RXL = r'(<script id="lig" type="application/json">)(.*?)(</script>)'   # Tahmin Ligi bölümündeki adlar da
+Y = re.sub(RXL, lambda m: m.group(1) + json.dumps(adlandir(json.loads(m.group(2))), ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + m.group(3), Y, count=1, flags=re.S)
 nS = len(cur)
 for pat, rep in [(r"\d+ \S+ 20\d\d itibarıyla güncel \(\d+\. hafta dahil\)", f"{TARIH} itibarıyla güncel ({HAFTA}. hafta dahil)"),
                  (rf"{SEZON}'nin \d+\. haftasına", f"{SEZON}'nin {HAFTA}. haftasına"),
