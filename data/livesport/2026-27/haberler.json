@@ -1,56 +1,6 @@
 {
- "cekildi": "2026-10-30 11:32 UTC",
+ "cekildi": "2026-10-31 11:03 UTC",
  "maclar": [
-  {
-   "mid": "A9cINRae",
-   "tarih": "2026-10-30 17:00",
-   "ev": "Konyaspor",
-   "dep": "Galatasaray",
-   "ev_ad": "Konyaspor",
-   "dep_ad": "Galatasaray",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/konyaspor-YazuCbCE/galatasaray-riaqqurF/haberler/?mid=A9cINRae",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": "Konyaspor",
-     "oyuncu": "Adil Demirbağ",
-     "durum": "yok",
-     "neden": "sakatlık"
-    },
-    {
-     "takim": "Galatasaray",
-     "oyuncu": "Abdülkerim Bardakçı",
-     "durum": "yok",
-     "neden": "ceza"
-    }
-   ]
-  },
-  {
-   "mid": "dpnKsmiR",
-   "tarih": "2026-10-31 10:30",
-   "ev": "Erzurum BB",
-   "dep": "Corum",
-   "ev_ad": "Erzurumspor",
-   "dep_ad": "Çorum",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/erzurumspor-fk-xQZ3CpVE/corum-fk-0vne21BK/haberler/?mid=dpnKsmiR",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Mustafa Yumlu",
-     "durum": "yok",
-     "neden": "sakatlık"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Serdar Saatçı",
-     "durum": "yok",
-     "neden": "diğer"
-    }
-   ]
-  },
   {
    "mid": "lKrCq9ME",
    "tarih": "2026-10-31 13:00",
@@ -116,7 +66,7 @@
    "dep_ad": "Eyüpspor",
    "hafta": "10. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/amedspor-EHdgkFvm/eyupspor-276zKCgt/haberler/?mid=W03vV97L",
-   "onizleme": false,
+   "onizleme": true,
    "eksik": []
   },
   {
