@@ -72,9 +72,13 @@ pd.DataFrame({"key": P.key, **{f"{n}_{s}": P[n].map(lambda v, j=j: float(v[j])) 
 print("tahmin:", len(P), "yeni hesaplanan:", yeni)
 
 # ---------- 3. mevcut uygulamayı çöz ----------
-USER, PW = os.environ["SL_KULLANICI"], os.environ["SL_SIFRE"]
+USER, PW = os.environ["SL_KULLANICI"].strip(), os.environ["SL_SIFRE"].strip()   # yapıştırırken gelen boşluk/satır sonu
 eski_sayfa = open(f"{ROOT}/index.html", encoding="utf-8").read()
-H = sifrele.coz(eski_sayfa, USER, PW)
+try:
+    H = sifrele.coz(eski_sayfa, USER, PW)
+except Exception:   # değerler asla yazdırılmaz (depo herkese açık)
+    sys.exit("index.html çözülemedi: SL_KULLANICI / SL_SIFRE secret değerleri sayfanın kullanıcı adı ve şifresiyle uyuşmuyor. "
+             "GitHub'da iki secret'ı da güncelleyin (Update), değeri elle yazın.")
 RX = r'(<script id="data" type="application/json">)(.*?)(</script>)'
 J = json.loads(re.search(RX, H, re.S).group(2))
 
