@@ -29,12 +29,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install numpy pandas scipy cryptography
+      - run: pip install numpy==2.2.6 pandas==2.3.3 scipy==1.15.3 cryptography==50.0.2
       - name: Modeli kur ve sayfayı şifrele
         env:
           SL_KULLANICI: ${{ secrets.SL_KULLANICI }}
           SL_SIFRE: ${{ secrets.SL_SIFRE }}
-        run: python motor/guncelle.py
+        run: |
+          # secret var mı (değer yazdırılmaz); hata olursa son satırlar herkese açık uyarı notu olarak görünür
+          [ -n "$SL_KULLANICI" ] && echo "SL_KULLANICI tanımlı" || echo "::error::SL_KULLANICI secret'ı boş veya tanımsız"
+          [ -n "$SL_SIFRE" ] && echo "SL_SIFRE tanımlı" || echo "::error::SL_SIFRE secret'ı boş veya tanımsız"
+          set -o pipefail
+          python motor/guncelle.py 2>&1 | tee cikti.log || { echo "::error::$(tail -c 900 cikti.log | tr '\n' ' ')"; exit 1; }
       - name: Değişiklikleri kaydet
         run: |
           git config user.name "veri-bot"
