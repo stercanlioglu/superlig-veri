@@ -80,7 +80,9 @@ for ad, (u, p) in [("doğru", (USER, PW)), ("secret'lar yer değiştirmiş", (PW
                    ("şifrenin sonunda nokta var", (USER, PW.rstrip("."))), ("şifre büyük harfle yazılmış", (USER, PW.lower()))]:
     try:
         H = sifrele.coz(eski_sayfa, u, p); USER, PW = u, p
-        print("secret kontrolü:", ad); break
+        print("secret kontrolü:", ad)
+        if ad != "doğru": print(f"::warning::Secret kontrolü: {ad}. Çalışıyor ama GitHub'da düzeltmeniz önerilir.")
+        break
     except Exception:
         pass
 if H is None:
