@@ -1,74 +1,6 @@
 {
- "cekildi": "2026-10-31 11:03 UTC",
+ "cekildi": "2026-11-01 11:58 UTC",
  "maclar": [
-  {
-   "mid": "lKrCq9ME",
-   "tarih": "2026-10-31 13:00",
-   "ev": "Kocaelispor",
-   "dep": "Rizespor",
-   "ev_ad": "Kocaelispor",
-   "dep_ad": "Rizespor",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/kocaelispor-hfvQIzKf/rizespor-EFRnJdkr/haberler/?mid=lKrCq9ME",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": "Kocaelispor",
-     "oyuncu": "Massadio Haidara",
-     "durum": "yok",
-     "neden": "sakatlık"
-    },
-    {
-     "takim": "Kocaelispor",
-     "oyuncu": "Tanguy Zoukrou",
-     "durum": "yok",
-     "neden": "sakatlık"
-    },
-    {
-     "takim": "Rizespor",
-     "oyuncu": "Ahmed Kutucu",
-     "durum": "yok",
-     "neden": "diğer"
-    }
-   ]
-  },
-  {
-   "mid": "rNeQL5U7",
-   "tarih": "2026-10-31 16:00",
-   "ev": "Fenerbahce",
-   "dep": "Goztep",
-   "ev_ad": "Fenerbahçe",
-   "dep_ad": "Göztepe",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/fenerbahce-MsbmracL/goztepe-0MJlDkrA/haberler/?mid=rNeQL5U7",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Archie Brown",
-     "durum": "yok",
-     "neden": "ceza"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Allan Godoi",
-     "durum": "yok",
-     "neden": "sakatlık"
-    }
-   ]
-  },
-  {
-   "mid": "W03vV97L",
-   "tarih": "2026-11-01 10:30",
-   "ev": "Amedspor",
-   "dep": "Eyupspor",
-   "ev_ad": "Amedspor",
-   "dep_ad": "Eyüpspor",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/amedspor-EHdgkFvm/eyupspor-276zKCgt/haberler/?mid=W03vV97L",
-   "onizleme": true,
-   "eksik": []
-  },
   {
    "mid": "bm5WWVx9",
    "tarih": "2026-11-01 13:00",
@@ -78,8 +10,39 @@
    "dep_ad": "Samsunspor",
    "hafta": "10. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/basaksehir-YqP5NmC1/samsunspor-pSc6z7bf/haberler/?mid=bm5WWVx9",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Christopher Operi",
+     "durum": "yok",
+     "neden": "diğer"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Jerome Opoku",
+     "durum": "yok",
+     "neden": "diğer"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Tanguy Coulibaly",
+     "durum": "yok",
+     "neden": "diğer"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Fatih Kaya",
+     "durum": "yok",
+     "neden": "diğer"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Joe Mendes",
+     "durum": "yok",
+     "neden": "diğer"
+    }
+   ]
   },
   {
    "mid": "vZfwBlGk",
@@ -90,7 +53,7 @@
    "dep_ad": "Gaziantep FK",
    "hafta": "10. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/trabzonspor-MmsYDc03/gaziantep-fk-ITkIKZ7q/haberler/?mid=vZfwBlGk",
-   "onizleme": false,
+   "onizleme": true,
    "eksik": []
   },
   {
@@ -102,7 +65,7 @@
    "dep_ad": "Beşiktaş",
    "hafta": "10. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/kasimpasa-dOlaIG4l/besiktas-IDmErJCR/haberler/?mid=nabo9Sp2",
-   "onizleme": false,
+   "onizleme": true,
    "eksik": []
   },
   {
