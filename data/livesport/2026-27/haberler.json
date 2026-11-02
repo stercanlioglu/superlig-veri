@@ -1,73 +1,6 @@
 {
- "cekildi": "2026-11-01 11:58 UTC",
+ "cekildi": "2026-11-02 13:40 UTC",
  "maclar": [
-  {
-   "mid": "bm5WWVx9",
-   "tarih": "2026-11-01 13:00",
-   "ev": "Buyuksehyr",
-   "dep": "Samsunspor",
-   "ev_ad": "Başakşehir",
-   "dep_ad": "Samsunspor",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/basaksehir-YqP5NmC1/samsunspor-pSc6z7bf/haberler/?mid=bm5WWVx9",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Christopher Operi",
-     "durum": "yok",
-     "neden": "diğer"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Jerome Opoku",
-     "durum": "yok",
-     "neden": "diğer"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Tanguy Coulibaly",
-     "durum": "yok",
-     "neden": "diğer"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Fatih Kaya",
-     "durum": "yok",
-     "neden": "diğer"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Joe Mendes",
-     "durum": "yok",
-     "neden": "diğer"
-    }
-   ]
-  },
-  {
-   "mid": "vZfwBlGk",
-   "tarih": "2026-11-01 13:00",
-   "ev": "Trabzonspor",
-   "dep": "Gaziantep",
-   "ev_ad": "Trabzonspor",
-   "dep_ad": "Gaziantep FK",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/trabzonspor-MmsYDc03/gaziantep-fk-ITkIKZ7q/haberler/?mid=vZfwBlGk",
-   "onizleme": true,
-   "eksik": []
-  },
-  {
-   "mid": "nabo9Sp2",
-   "tarih": "2026-11-01 16:00",
-   "ev": "Kasimpasa",
-   "dep": "Besiktas",
-   "ev_ad": "Kasımpaşa",
-   "dep_ad": "Beşiktaş",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/kasimpasa-dOlaIG4l/besiktas-IDmErJCR/haberler/?mid=nabo9Sp2",
-   "onizleme": true,
-   "eksik": []
-  },
   {
    "mid": "2qfAPmVr",
    "tarih": "2026-11-02 17:00",
@@ -77,8 +10,21 @@
    "dep_ad": "Alanyaspor",
    "hafta": "10. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/genclerbirligi-GOPqBIRK/alanyaspor-IcN8oPcJ/haberler/?mid=2qfAPmVr",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Pedro Pereira",
+     "durum": "yok",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Fatih Aksoy",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   }
  ]
 }
