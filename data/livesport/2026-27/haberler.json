@@ -1,30 +1,29 @@
 {
- "cekildi": "2026-11-02 13:40 UTC",
+ "cekildi": "2026-11-03 12:57 UTC",
  "maclar": [
   {
-   "mid": "2qfAPmVr",
-   "tarih": "2026-11-02 17:00",
-   "ev": "Genclerbirligi",
-   "dep": "Alanyaspor",
-   "ev_ad": "Gençlerbirliği",
-   "dep_ad": "Alanyaspor",
-   "hafta": "10. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/genclerbirligi-GOPqBIRK/alanyaspor-IcN8oPcJ/haberler/?mid=2qfAPmVr",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Pedro Pereira",
-     "durum": "yok",
-     "neden": "sakatlık"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Fatih Aksoy",
-     "durum": "yok",
-     "neden": "sakatlık"
-    }
-   ]
+   "mid": "hGXkxREl",
+   "tarih": "2026-11-06 17:00",
+   "ev": "Gaziantep",
+   "dep": "Kasimpasa",
+   "ev_ad": "Gaziantep FK",
+   "dep_ad": "Kasımpaşa",
+   "hafta": "11. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/gaziantep-fk-ITkIKZ7q/kasimpasa-dOlaIG4l/haberler/?mid=hGXkxREl",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "0tybz5q1",
+   "tarih": "2026-11-07 10:30",
+   "ev": "Eyupspor",
+   "dep": "Kocaelispor",
+   "ev_ad": "Eyüpspor",
+   "dep_ad": "Kocaelispor",
+   "hafta": "11. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/eyupspor-276zKCgt/kocaelispor-hfvQIzKf/haberler/?mid=0tybz5q1",
+   "onizleme": false,
+   "eksik": []
   }
  ]
 }
