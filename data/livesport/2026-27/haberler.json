@@ -1,5 +1,5 @@
 {
- "cekildi": "2026-11-04 13:08 UTC",
+ "cekildi": "2026-11-05 13:22 UTC",
  "maclar": [
   {
    "mid": "hGXkxREl",
@@ -10,8 +10,21 @@
    "dep_ad": "Kasımpaşa",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/gaziantep-fk-ITkIKZ7q/kasimpasa-dOlaIG4l/haberler/?mid=hGXkxREl",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Gaziantep",
+     "oyuncu": "Arda Kizildag",
+     "durum": "yok",
+     "neden": "diğer"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Ulrich Meleke",
+     "durum": "yok",
+     "neden": "diğer"
+    }
+   ]
   },
   {
    "mid": "0tybz5q1",
@@ -22,8 +35,21 @@
    "dep_ad": "Kocaelispor",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/eyupspor-276zKCgt/kocaelispor-hfvQIzKf/haberler/?mid=0tybz5q1",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Talha Ulvan",
+     "durum": "yok",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Tanguy Zoukrou",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "ATZgxnWo",
@@ -34,8 +60,15 @@
    "dep_ad": "Konyaspor",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/samsunspor-pSc6z7bf/konyaspor-YazuCbCE/haberler/?mid=ATZgxnWo",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Konyaspor",
+     "oyuncu": "Adil Demirbag",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "pAfuzdkI",
@@ -82,6 +115,30 @@
    "dep_ad": "Fenerbahçe",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/corum-fk-0vne21BK/fenerbahce-MsbmracL/haberler/?mid=CddXyIK5",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "6wv6YrED",
+   "tarih": "2026-11-08 15:30",
+   "ev": "Alanyaspor",
+   "dep": "Trabzonspor",
+   "ev_ad": "Alanyaspor",
+   "dep_ad": "Trabzonspor",
+   "hafta": "11. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/alanyaspor-IcN8oPcJ/trabzonspor-MmsYDc03/haberler/?mid=6wv6YrED",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "Iy8nYZJU",
+   "tarih": "2026-11-08 18:00",
+   "ev": "Besiktas",
+   "dep": "Genclerbirligi",
+   "ev_ad": "Beşiktaş",
+   "dep_ad": "Gençlerbirliği",
+   "hafta": "11. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/besiktas-IDmErJCR/genclerbirligi-GOPqBIRK/haberler/?mid=Iy8nYZJU",
    "onizleme": false,
    "eksik": []
   }
