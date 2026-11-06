@@ -1,5 +1,5 @@
 {
- "cekildi": "2026-11-05 13:22 UTC",
+ "cekildi": "2026-11-06 13:05 UTC",
  "maclar": [
   {
    "mid": "hGXkxREl",
@@ -91,8 +91,27 @@
    "dep_ad": "Başakşehir",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/goztepe-0MJlDkrA/basaksehir-YqP5NmC1/haberler/?mid=4WhPwvjg",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Goztep",
+     "oyuncu": "Luka Gugeshashvili",
+     "durum": "yok",
+     "neden": "diğer"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Christopher Operi",
+     "durum": "yok",
+     "neden": "diğer"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Jerome Opoku",
+     "durum": "yok",
+     "neden": "diğer"
+    }
+   ]
   },
   {
    "mid": "d6kHu0Lt",
