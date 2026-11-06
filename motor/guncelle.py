@@ -254,6 +254,26 @@ if os.path.exists(LP) and os.path.exists(f"{FMD}/oyuncu.csv"):
     J["haber"] = {"tarih": LS["cekildi"], "w": HABER_W, "maclar": hm}
     print("haber etkisi:", [(x["h"], x["a"], x["lh"], x["la"]) for x in hm])
 
+# ---------- Tahmin Ligi: WeKissPicks resmi API (WKP_API_KEY ortam değişkeni varsa; yoksa mevcut bölüm aynen kalır) ----------
+# Anahtar depoya yazılmaz, çıktıya basılmaz. API hatası siteyi durdurmaz: uyarı verilir, eski Tahmin Ligi verisi korunur.
+LIG_YENI = None
+ANAHTAR = os.environ.get("WKP_API_KEY", "").strip()
+if not ANAHTAR:
+    print("WKP_API_KEY tanımlı değil: Tahmin Ligi verisi güncellenmedi")
+else:
+    import wekiss, eslestir
+    from datetime import timezone
+    try:
+        def tahmin_fn(h, a):   # güncel modelle: Elo + Dixon–Coles ensemble olasılığı ve skor matrisi
+            pe = elo_to_probs(elo.expect(h, a)); dc = dc_predict(model, h, a)
+            if dc is None: return pe, wekiss.skor_matrisi(1.45, 1.15, float(model["rho"]))
+            return 0.5 * pe + 0.5 * dc["p"], dc["matrix"]
+        onb = {(r.home, r.away): (tuple(r.p), r.lh, r.la) for r in P[P.season == SEZON].itertuples()}
+        LIG_YENI = wekiss.uret(wekiss.indir(ANAHTAR, eslestir.sade), onb, tahmin_fn, float(model["rho"]), datetime.now(timezone.utc))
+        print("Tahmin Ligi:", LIG_YENI["nmatch"], "biten maç,", len(LIG_YENI["rows"]), "kullanıcı,", len(LIG_YENI["up"]), "oynanmamış maç")
+    except Exception as e:
+        print(f"::warning::WeKissPicks verisi alınamadı, eski Tahmin Ligi verisi korundu: {type(e).__name__}: {e}")
+
 # ---------- Görünen takım adları: motor football-data kısaltmalarıyla çalışır, uygulamaya Türkçe adlar gider ----------
 AD = {"Ad. Demirspor": "Adana Demirspor", "Ankaragucu": "Ankaragücü", "Besiktas": "Beşiktaş", "Buyuksehyr": "Başakşehir", "Corum": "Çorum FK",
       "Erzurum BB": "Erzurumspor FK", "Eyupspor": "Eyüpspor", "Fenerbahce": "Fenerbahçe", "Gaziantep": "Gaziantep FK", "Genclerbirligi": "Gençlerbirliği",
@@ -269,7 +289,7 @@ J = adlandir(J)
 veri = json.dumps(J, ensure_ascii=False, separators=(",", ":"), allow_nan=False).replace("</", "<\\/")   # NaN sayfayı bozar
 Y = re.sub(RX, lambda m: m.group(1) + veri + m.group(3), H, count=1, flags=re.S)
 RXL = r'(<script id="lig" type="application/json">)(.*?)(</script>)'   # Tahmin Ligi bölümündeki adlar da
-Y = re.sub(RXL, lambda m: m.group(1) + json.dumps(adlandir(json.loads(m.group(2))), ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + m.group(3), Y, count=1, flags=re.S)
+Y = re.sub(RXL, lambda m: m.group(1) + json.dumps(adlandir(LIG_YENI if LIG_YENI is not None else json.loads(m.group(2))), ensure_ascii=False, separators=(",", ":"), allow_nan=False).replace("</", "<\\/") + m.group(3), Y, count=1, flags=re.S)
 nS = len(cur)
 for pat, rep in [(r"\d+ \S+ 20\d\d itibarıyla güncel \(\d+\. hafta dahil\)", f"{TARIH} itibarıyla güncel ({HAFTA}. hafta dahil)"),
                  (rf"{SEZON}'nin \d+\. haftasına", f"{SEZON}'nin {HAFTA}. haftasına"),
