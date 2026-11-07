@@ -1,56 +1,6 @@
 {
- "cekildi": "2026-11-06 13:05 UTC",
+ "cekildi": "2026-11-07 11:52 UTC",
  "maclar": [
-  {
-   "mid": "hGXkxREl",
-   "tarih": "2026-11-06 17:00",
-   "ev": "Gaziantep",
-   "dep": "Kasimpasa",
-   "ev_ad": "Gaziantep FK",
-   "dep_ad": "Kasımpaşa",
-   "hafta": "11. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/gaziantep-fk-ITkIKZ7q/kasimpasa-dOlaIG4l/haberler/?mid=hGXkxREl",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": "Gaziantep",
-     "oyuncu": "Arda Kizildag",
-     "durum": "yok",
-     "neden": "diğer"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Ulrich Meleke",
-     "durum": "yok",
-     "neden": "diğer"
-    }
-   ]
-  },
-  {
-   "mid": "0tybz5q1",
-   "tarih": "2026-11-07 10:30",
-   "ev": "Eyupspor",
-   "dep": "Kocaelispor",
-   "ev_ad": "Eyüpspor",
-   "dep_ad": "Kocaelispor",
-   "hafta": "11. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/eyupspor-276zKCgt/kocaelispor-hfvQIzKf/haberler/?mid=0tybz5q1",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Talha Ulvan",
-     "durum": "yok",
-     "neden": "sakatlık"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Tanguy Zoukrou",
-     "durum": "yok",
-     "neden": "sakatlık"
-    }
-   ]
-  },
   {
    "mid": "ATZgxnWo",
    "tarih": "2026-11-07 13:00",
@@ -122,8 +72,21 @@
    "dep_ad": "Erzurumspor",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/rizespor-EFRnJdkr/erzurumspor-fk-xQZ3CpVE/haberler/?mid=d6kHu0Lt",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Rizespor",
+     "oyuncu": "Modibo Sagnan",
+     "durum": "yok",
+     "neden": "ceza"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Mustafa Yumlu",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "CddXyIK5",
