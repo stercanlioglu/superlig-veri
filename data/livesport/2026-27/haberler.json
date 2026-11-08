@@ -1,93 +1,6 @@
 {
- "cekildi": "2026-11-07 11:52 UTC",
+ "cekildi": "2026-11-08 12:04 UTC",
  "maclar": [
-  {
-   "mid": "ATZgxnWo",
-   "tarih": "2026-11-07 13:00",
-   "ev": "Samsunspor",
-   "dep": "Konyaspor",
-   "ev_ad": "Samsunspor",
-   "dep_ad": "Konyaspor",
-   "hafta": "11. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/samsunspor-pSc6z7bf/konyaspor-YazuCbCE/haberler/?mid=ATZgxnWo",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": "Konyaspor",
-     "oyuncu": "Adil Demirbag",
-     "durum": "yok",
-     "neden": "sakatlık"
-    }
-   ]
-  },
-  {
-   "mid": "pAfuzdkI",
-   "tarih": "2026-11-07 16:00",
-   "ev": "Galatasaray",
-   "dep": "Amedspor",
-   "ev_ad": "Galatasaray",
-   "dep_ad": "Amedspor",
-   "hafta": "11. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/galatasaray-riaqqurF/amedspor-EHdgkFvm/haberler/?mid=pAfuzdkI",
-   "onizleme": false,
-   "eksik": []
-  },
-  {
-   "mid": "4WhPwvjg",
-   "tarih": "2026-11-07 16:00",
-   "ev": "Goztep",
-   "dep": "Buyuksehyr",
-   "ev_ad": "Göztepe",
-   "dep_ad": "Başakşehir",
-   "hafta": "11. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/goztepe-0MJlDkrA/basaksehir-YqP5NmC1/haberler/?mid=4WhPwvjg",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": "Goztep",
-     "oyuncu": "Luka Gugeshashvili",
-     "durum": "yok",
-     "neden": "diğer"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Christopher Operi",
-     "durum": "yok",
-     "neden": "diğer"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Jerome Opoku",
-     "durum": "yok",
-     "neden": "diğer"
-    }
-   ]
-  },
-  {
-   "mid": "d6kHu0Lt",
-   "tarih": "2026-11-08 10:30",
-   "ev": "Rizespor",
-   "dep": "Erzurum BB",
-   "ev_ad": "Rizespor",
-   "dep_ad": "Erzurumspor",
-   "hafta": "11. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/rizespor-EFRnJdkr/erzurumspor-fk-xQZ3CpVE/haberler/?mid=d6kHu0Lt",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": "Rizespor",
-     "oyuncu": "Modibo Sagnan",
-     "durum": "yok",
-     "neden": "ceza"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Mustafa Yumlu",
-     "durum": "yok",
-     "neden": "sakatlık"
-    }
-   ]
-  },
   {
    "mid": "CddXyIK5",
    "tarih": "2026-11-08 13:00",
@@ -97,8 +10,27 @@
    "dep_ad": "Fenerbahçe",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/corum-fk-0vne21BK/fenerbahce-MsbmracL/haberler/?mid=CddXyIK5",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Corum",
+     "oyuncu": "Gokhan Sazdagi",
+     "durum": "yok",
+     "neden": "ceza"
+    },
+    {
+     "takim": "Fenerbahce",
+     "oyuncu": "Nathan Ake",
+     "durum": "yok",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Marco Asensio",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "6wv6YrED",
@@ -109,8 +41,15 @@
    "dep_ad": "Trabzonspor",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/alanyaspor-IcN8oPcJ/trabzonspor-MmsYDc03/haberler/?mid=6wv6YrED",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Fatih Aksoy",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "Iy8nYZJU",
@@ -121,8 +60,21 @@
    "dep_ad": "Gençlerbirliği",
    "hafta": "11. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/besiktas-IDmErJCR/genclerbirligi-GOPqBIRK/haberler/?mid=Iy8nYZJU",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Besiktas",
+     "oyuncu": "Fabio Miretti",
+     "durum": "yok",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": "Genclerbirligi",
+     "oyuncu": "Gençlerbirliği'nde Ensar Cavusoglu",
+     "durum": "yok",
+     "neden": "diğer"
+    }
+   ]
   }
  ]
 }
