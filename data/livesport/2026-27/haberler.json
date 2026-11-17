@@ -1,4 +1,41 @@
 {
- "cekildi": "2026-11-16 13:48 UTC",
- "maclar": []
+ "cekildi": "2026-11-17 14:36 UTC",
+ "maclar": [
+  {
+   "mid": "KtIZlPFi",
+   "tarih": "2026-11-21 10:30",
+   "ev": "Genclerbirligi",
+   "dep": "Gaziantep",
+   "ev_ad": "Gençlerbirliği",
+   "dep_ad": "Gaziantep FK",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/genclerbirligi-GOPqBIRK/gaziantep-fk-ITkIKZ7q/haberler/?mid=KtIZlPFi",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "hzQmRLNp",
+   "tarih": "2026-11-21 13:00",
+   "ev": "Amedspor",
+   "dep": "Rizespor",
+   "ev_ad": "Amedspor",
+   "dep_ad": "Rizespor",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/amedspor-EHdgkFvm/rizespor-EFRnJdkr/haberler/?mid=hzQmRLNp",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "0KJkosFG",
+   "tarih": "2026-11-21 13:00",
+   "ev": "Galatasaray",
+   "dep": "Samsunspor",
+   "ev_ad": "Galatasaray",
+   "dep_ad": "Samsunspor",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/galatasaray-riaqqurF/samsunspor-pSc6z7bf/haberler/?mid=0KJkosFG",
+   "onizleme": false,
+   "eksik": []
+  }
+ ]
 }
