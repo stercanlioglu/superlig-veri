@@ -1,5 +1,5 @@
 {
- "cekildi": "2026-11-17 14:36 UTC",
+ "cekildi": "2026-11-18 14:12 UTC",
  "maclar": [
   {
    "mid": "KtIZlPFi",
@@ -34,6 +34,54 @@
    "dep_ad": "Samsunspor",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/galatasaray-riaqqurF/samsunspor-pSc6z7bf/haberler/?mid=0KJkosFG",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "nyIcqLqT",
+   "tarih": "2026-11-21 16:00",
+   "ev": "Kocaelispor",
+   "dep": "Fenerbahce",
+   "ev_ad": "Kocaelispor",
+   "dep_ad": "Fenerbahçe",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/kocaelispor-hfvQIzKf/fenerbahce-MsbmracL/haberler/?mid=nyIcqLqT",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "IJ8Twa7j",
+   "tarih": "2026-11-22 10:30",
+   "ev": "Erzurum BB",
+   "dep": "Goztep",
+   "ev_ad": "Erzurumspor",
+   "dep_ad": "Göztepe",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/erzurumspor-fk-xQZ3CpVE/goztepe-0MJlDkrA/haberler/?mid=IJ8Twa7j",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "j7yAY3VA",
+   "tarih": "2026-11-22 13:00",
+   "ev": "Kasimpasa",
+   "dep": "Alanyaspor",
+   "ev_ad": "Kasımpaşa",
+   "dep_ad": "Alanyaspor",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/kasimpasa-dOlaIG4l/alanyaspor-IcN8oPcJ/haberler/?mid=j7yAY3VA",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "S6Lsm3p4",
+   "tarih": "2026-11-22 13:00",
+   "ev": "Konyaspor",
+   "dep": "Besiktas",
+   "ev_ad": "Konyaspor",
+   "dep_ad": "Beşiktaş",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/konyaspor-YazuCbCE/besiktas-IDmErJCR/haberler/?mid=S6Lsm3p4",
    "onizleme": false,
    "eksik": []
   }
