@@ -3,12 +3,16 @@
 # Pazar kodları: 1 = MS 1/X/2, 11/12/13 = Alt/Üst 1,5/2,5/3,5 (önce Alt, sonra Üst; modelle doğrulandı).
 # 7 = İlk yarı 1/X/2, 14 = İlk yarı Alt/Üst 1,5 (modelin ilk yarı olasılıklarıyla doğrulandı).
 # 3 = Çifte şans (1X / 12 / X2), 38 = Karşılıklı gol (Var / Yok), 155 = Alt/Üst 4,5 (Alt / Üst),
+# 777 = Maç skoru (29 seçenek; sıra SKOR_POZ, belirsiz 6-0/0-6 ve "diğer" konumları alınmaz; skorpay = pazarın toplam 1/oran'ı).
 # 268 = Handikaplı maç sonucu (çizgi ev sahibinin golüne eklenir; 1 / X / 2). Kod ve sıralar, MS ile Alt/Üst'e uydurulmuş
 # skor dağılımıyla 20 Kasım 2026 bülteninde doğrulandı. MBS: kupondaki en az maç sayısı (kullanılan pazarların en büyüğü).
 # Diğer tüm pazarlar ham olarak "ham" sütununda saklanır (kod|çizgi|oranlar).
 import requests, pandas as pd, json, os, sys, time
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "motor"))
 import eslestir
+SKOR_POZ = {0: "1-0", 1: "2-0", 2: "2-1", 3: "3-0", 4: "3-1", 5: "3-2", 6: "4-0", 7: "4-1", 8: "4-2", 9: "5-0", 10: "5-1",
+            12: "0-0", 13: "1-1", 14: "2-2", 15: "3-3", 16: "0-1", 17: "0-2", 18: "1-2", 19: "0-3", 20: "1-3", 21: "2-3",
+            22: "0-4", 23: "1-4", 24: "2-4", 25: "0-5", 26: "1-5"}
 SEZON = "2026-27"; OUT = f"data/nesine/{SEZON}"; os.makedirs(OUT, exist_ok=True)
 URL = "https://cdnbulten.nesine.com/api/bulten/getprebultenfull"
 H = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) superlig-veri (kisisel analiz)", "Referer": "https://www.nesine.com/iddaa"}
@@ -40,6 +44,9 @@ for e in ea:
                  "kgvar": g((38, 0.0), 0), "kgyok": g((38, 0.0), 1), "alt45": g((155, 4.5), 0), "ust45": g((155, 4.5), 1),
                  "hc": json.dumps({str(k[1]): [g(k, 0), g(k, 1), g(k, 2)] for k in sorted(mk) if k[0] == 268}, separators=(",", ":")),
                  "mbs": max(mbs.get(c, 1) for c in (1, 3, 11, 12, 13, 38, 155, 268)),
+                 "skor": json.dumps({sk: g((777, 0.0), k) for k, sk in SKOR_POZ.items()} if len(mk.get((777, 0.0)) or []) == 29 else {}, separators=(",", ":")),
+                 "skormbs": mbs.get(777, 1),
+                 "skorpay": round(sum(1 / v for v in mk[(777, 0.0)] if v and v > 1), 4) if len(mk.get((777, 0.0)) or []) == 29 else None,
                  "ham": json.dumps({f"{k[0]}|{k[1]}": v for k, v in mk.items()}, separators=(",", ":")), "cekildi": simdi})
 G = pd.DataFrame(rows).sort_values(["tarih", "saat", "ev"]) if rows else pd.DataFrame()
 G.to_csv(f"{OUT}/guncel.csv", index=False)

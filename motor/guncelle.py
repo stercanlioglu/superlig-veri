@@ -211,7 +211,10 @@ if os.path.exists(NP) and os.path.getsize(NP) > 10:
                    "iy": f(*(getattr(r, c, None) for c in ("iy1", "iyx", "iy2"))), "iyau15": f(*(getattr(r, c, None) for c in ("iyalt15", "iyust15"))),
                    "kg": f(*(getattr(r, c, None) for c in ("kgvar", "kgyok"))), "au45": f(*(getattr(r, c, None) for c in ("alt45", "ust45"))),
                    "hc": {k: f(*v) for k, v in (json.loads(r.hc).items() if isinstance(getattr(r, "hc", None), str) else [])},
-                   "mbs": int(getattr(r, "mbs", 1)) if pd.notna(getattr(r, "mbs", 1)) else 1} for r in NS.itertuples()]}
+                   "mbs": int(getattr(r, "mbs", 1)) if pd.notna(getattr(r, "mbs", 1)) else 1,
+                   "skor": {k: v for k, v in (json.loads(r.skor).items() if isinstance(getattr(r, "skor", None), str) else []) if v},
+                   "skormbs": int(r.skormbs) if pd.notna(getattr(r, "skormbs", None)) else 1,
+                   "skorpay": None if pd.isna(getattr(r, "skorpay", None)) else float(r.skorpay)} for r in NS.itertuples()]}
     print("Nesine maç:", len(NS))
 
 # ---------- Haber etkisi: Livesport önizlemesindeki eksik oyuncular (livesport.py çıktısı varsa) ----------
