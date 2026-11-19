@@ -1,5 +1,5 @@
 {
- "cekildi": "2026-11-18 14:12 UTC",
+ "cekildi": "2026-11-19 14:34 UTC",
  "maclar": [
   {
    "mid": "KtIZlPFi",
@@ -10,8 +10,21 @@
    "dep_ad": "Gaziantep FK",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/genclerbirligi-GOPqBIRK/gaziantep-fk-ITkIKZ7q/haberler/?mid=KtIZlPFi",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Metehan Baltaci",
+     "durum": "yok",
+     "neden": "ceza"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Ensar Cavusoglu",
+     "durum": "yok",
+     "neden": "ceza"
+    }
+   ]
   },
   {
    "mid": "hzQmRLNp",
@@ -22,8 +35,21 @@
    "dep_ad": "Rizespor",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/amedspor-EHdgkFvm/rizespor-EFRnJdkr/haberler/?mid=hzQmRLNp",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Lumbardh Dellova",
+     "durum": "yok",
+     "neden": "diğer"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Gennaro Borrelli",
+     "durum": "supheli",
+     "neden": "diğer"
+    }
+   ]
   },
   {
    "mid": "0KJkosFG",
@@ -34,7 +60,7 @@
    "dep_ad": "Samsunspor",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/galatasaray-riaqqurF/samsunspor-pSc6z7bf/haberler/?mid=0KJkosFG",
-   "onizleme": false,
+   "onizleme": true,
    "eksik": []
   },
   {
@@ -82,6 +108,18 @@
    "dep_ad": "Beşiktaş",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/konyaspor-YazuCbCE/besiktas-IDmErJCR/haberler/?mid=S6Lsm3p4",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "rsY1zQ0b",
+   "tarih": "2026-11-22 16:00",
+   "ev": "Trabzonspor",
+   "dep": "Eyupspor",
+   "ev_ad": "Trabzonspor",
+   "dep_ad": "Eyüpspor",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/trabzonspor-MmsYDc03/eyupspor-276zKCgt/haberler/?mid=rsY1zQ0b",
    "onizleme": false,
    "eksik": []
   }
