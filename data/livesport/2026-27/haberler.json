@@ -1,5 +1,5 @@
 {
- "cekildi": "2026-11-19 14:34 UTC",
+ "cekildi": "2026-11-19 21:51 UTC",
  "maclar": [
   {
    "mid": "KtIZlPFi",
@@ -72,7 +72,7 @@
    "dep_ad": "Fenerbahçe",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/kocaelispor-hfvQIzKf/fenerbahce-MsbmracL/haberler/?mid=nyIcqLqT",
-   "onizleme": false,
+   "onizleme": true,
    "eksik": []
   },
   {
@@ -120,6 +120,18 @@
    "dep_ad": "Eyüpspor",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/trabzonspor-MmsYDc03/eyupspor-276zKCgt/haberler/?mid=rsY1zQ0b",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "d4vIWs0N",
+   "tarih": "2026-11-23 17:00",
+   "ev": "Buyuksehyr",
+   "dep": "Corum",
+   "ev_ad": "Başakşehir",
+   "dep_ad": "Çorum",
+   "hafta": "12. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/basaksehir-YqP5NmC1/corum-fk-0vne21BK/haberler/?mid=d4vIWs0N",
    "onizleme": false,
    "eksik": []
   }
