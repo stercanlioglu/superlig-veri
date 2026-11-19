@@ -2,7 +2,9 @@
 # Tek istek: www.nesine.com/iddaa sayfasının kullandığı açık bülten (cdnbulten.nesine.com). robots.txt: izinli.
 # Pazar kodları: 1 = MS 1/X/2, 11/12/13 = Alt/Üst 1,5/2,5/3,5 (önce Alt, sonra Üst; modelle doğrulandı).
 # 7 = İlk yarı 1/X/2, 14 = İlk yarı Alt/Üst 1,5 (modelin ilk yarı olasılıklarıyla doğrulandı).
-# 3 = Çifte şans (seçenek sırası doğrulanmadı, uygulamada gösterilmiyor). Karşılıklı gol büyük ihtimalle 38 (doğrulanmadı).
+# 3 = Çifte şans (1X / 12 / X2), 38 = Karşılıklı gol (Var / Yok), 155 = Alt/Üst 4,5 (Alt / Üst),
+# 268 = Handikaplı maç sonucu (çizgi ev sahibinin golüne eklenir; 1 / X / 2). Kod ve sıralar, MS ile Alt/Üst'e uydurulmuş
+# skor dağılımıyla 20 Kasım 2026 bülteninde doğrulandı. MBS: kupondaki en az maç sayısı (kullanılan pazarların en büyüğü).
 # Diğer tüm pazarlar ham olarak "ham" sütununda saklanır (kod|çizgi|oranlar).
 import requests, pandas as pd, json, os, sys, time
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "motor"))
@@ -22,9 +24,10 @@ for e in ea:
     if e.get("TYPE") != 1 or "HN" not in e: continue
     ev, dep = eslestir.takim(e["HN"], TAKIMLAR), eslestir.takim(e["AN"], TAKIMLAR)
     if not ev or not dep: continue                       # iki takım da Süper Lig takımı değilse (kupa vb. dahil) atla
-    mk = {}
+    mk, mbs = {}, {}
     for m in e.get("MA", []):
         mk.setdefault((m["MTID"], m.get("SOV", 0.0)), [o["O"] for o in m.get("OCA", [])])
+        mbs[m["MTID"]] = max(mbs.get(m["MTID"], 1), int(m.get("MBS") or 1))
     def g(k, i):   # Nesine kapalı seçeneği 1,00 olarak verir -> boş
         o = mk.get(k) or []
         return o[i] if len(o) > i and o[i] and o[i] > 1.0 else None
@@ -34,6 +37,9 @@ for e in ea:
                  "cs1x": g((3, 0.0), 0), "cs12": g((3, 0.0), 1), "csx2": g((3, 0.0), 2),
                  "alt15": g((11, 1.5), 0), "ust15": g((11, 1.5), 1), "alt25": g((12, 2.5), 0), "ust25": g((12, 2.5), 1), "alt35": g((13, 3.5), 0), "ust35": g((13, 3.5), 1),
                  "iy1": g((7, 0.0), 0), "iyx": g((7, 0.0), 1), "iy2": g((7, 0.0), 2), "iyalt15": g((14, 1.5), 0), "iyust15": g((14, 1.5), 1),
+                 "kgvar": g((38, 0.0), 0), "kgyok": g((38, 0.0), 1), "alt45": g((155, 4.5), 0), "ust45": g((155, 4.5), 1),
+                 "hc": json.dumps({str(k[1]): [g(k, 0), g(k, 1), g(k, 2)] for k in sorted(mk) if k[0] == 268}, separators=(",", ":")),
+                 "mbs": max(mbs.get(c, 1) for c in (1, 3, 11, 12, 13, 38, 155, 268)),
                  "ham": json.dumps({f"{k[0]}|{k[1]}": v for k, v in mk.items()}, separators=(",", ":")), "cekildi": simdi})
 G = pd.DataFrame(rows).sort_values(["tarih", "saat", "ev"]) if rows else pd.DataFrame()
 G.to_csv(f"{OUT}/guncel.csv", index=False)
