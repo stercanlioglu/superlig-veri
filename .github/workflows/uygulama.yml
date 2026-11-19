@@ -29,7 +29,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install numpy==2.2.6 pandas==2.3.3 scipy==1.15.3 cryptography==50.0.2
+      - run: pip install numpy==2.2.6 pandas==2.3.3 scipy==1.15.3 cryptography==50.0.2 requests==2.34.2
       - name: Modeli kur ve sayfayı şifrele
         env:
           SL_KULLANICI: ${{ secrets.SL_KULLANICI }}

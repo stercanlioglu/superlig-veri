@@ -261,9 +261,9 @@ ANAHTAR = os.environ.get("WKP_API_KEY", "").strip()
 if not ANAHTAR:
     print("WKP_API_KEY tanımlı değil: Tahmin Ligi verisi güncellenmedi")
 else:
-    import wekiss, eslestir
     from datetime import timezone
     try:
+        import wekiss, eslestir   # içe aktarma da korumalı: eksik kütüphane siteyi durdurmasın
         def tahmin_fn(h, a):   # güncel modelle: Elo + Dixon–Coles ensemble olasılığı ve skor matrisi
             pe = elo_to_probs(elo.expect(h, a)); dc = dc_predict(model, h, a)
             if dc is None: return pe, wekiss.skor_matrisi(1.45, 1.15, float(model["rho"]))
