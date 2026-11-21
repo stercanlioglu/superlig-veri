@@ -1,68 +1,6 @@
 {
- "cekildi": "2026-11-20 14:11 UTC",
+ "cekildi": "2026-11-21 13:36 UTC",
  "maclar": [
-  {
-   "mid": "KtIZlPFi",
-   "tarih": "2026-11-21 10:30",
-   "ev": "Genclerbirligi",
-   "dep": "Gaziantep",
-   "ev_ad": "Gençlerbirliği",
-   "dep_ad": "Gaziantep FK",
-   "hafta": "12. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/genclerbirligi-GOPqBIRK/gaziantep-fk-ITkIKZ7q/haberler/?mid=KtIZlPFi",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Metehan Baltaci",
-     "durum": "yok",
-     "neden": "ceza"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Ensar Cavusoglu",
-     "durum": "yok",
-     "neden": "ceza"
-    }
-   ]
-  },
-  {
-   "mid": "hzQmRLNp",
-   "tarih": "2026-11-21 13:00",
-   "ev": "Amedspor",
-   "dep": "Rizespor",
-   "ev_ad": "Amedspor",
-   "dep_ad": "Rizespor",
-   "hafta": "12. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/amedspor-EHdgkFvm/rizespor-EFRnJdkr/haberler/?mid=hzQmRLNp",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Lumbardh Dellova",
-     "durum": "yok",
-     "neden": "diğer"
-    },
-    {
-     "takim": null,
-     "oyuncu": "Gennaro Borrelli",
-     "durum": "supheli",
-     "neden": "diğer"
-    }
-   ]
-  },
-  {
-   "mid": "0KJkosFG",
-   "tarih": "2026-11-21 13:00",
-   "ev": "Galatasaray",
-   "dep": "Samsunspor",
-   "ev_ad": "Galatasaray",
-   "dep_ad": "Samsunspor",
-   "hafta": "12. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/galatasaray-riaqqurF/samsunspor-pSc6z7bf/haberler/?mid=0KJkosFG",
-   "onizleme": true,
-   "eksik": []
-  },
   {
    "mid": "nyIcqLqT",
    "tarih": "2026-11-21 16:00",
@@ -96,8 +34,15 @@
    "dep_ad": "Alanyaspor",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/kasimpasa-dOlaIG4l/alanyaspor-IcN8oPcJ/haberler/?mid=j7yAY3VA",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Fernandes Paolo",
+     "durum": "supheli",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "S6Lsm3p4",
@@ -108,8 +53,15 @@
    "dep_ad": "Beşiktaş",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/konyaspor-YazuCbCE/besiktas-IDmErJCR/haberler/?mid=S6Lsm3p4",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": "Konyaspor",
+     "oyuncu": "Adil Demirbag",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "rsY1zQ0b",
