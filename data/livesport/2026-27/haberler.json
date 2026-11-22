@@ -1,18 +1,6 @@
 {
- "cekildi": "2026-11-21 13:36 UTC",
+ "cekildi": "2026-11-22 13:30 UTC",
  "maclar": [
-  {
-   "mid": "nyIcqLqT",
-   "tarih": "2026-11-21 16:00",
-   "ev": "Kocaelispor",
-   "dep": "Fenerbahce",
-   "ev_ad": "Kocaelispor",
-   "dep_ad": "Fenerbahçe",
-   "hafta": "12. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/kocaelispor-hfvQIzKf/fenerbahce-MsbmracL/haberler/?mid=nyIcqLqT",
-   "onizleme": true,
-   "eksik": []
-  },
   {
    "mid": "IJ8Twa7j",
    "tarih": "2026-11-22 10:30",
@@ -26,44 +14,6 @@
    "eksik": []
   },
   {
-   "mid": "j7yAY3VA",
-   "tarih": "2026-11-22 13:00",
-   "ev": "Kasimpasa",
-   "dep": "Alanyaspor",
-   "ev_ad": "Kasımpaşa",
-   "dep_ad": "Alanyaspor",
-   "hafta": "12. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/kasimpasa-dOlaIG4l/alanyaspor-IcN8oPcJ/haberler/?mid=j7yAY3VA",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Fernandes Paolo",
-     "durum": "supheli",
-     "neden": "sakatlık"
-    }
-   ]
-  },
-  {
-   "mid": "S6Lsm3p4",
-   "tarih": "2026-11-22 13:00",
-   "ev": "Konyaspor",
-   "dep": "Besiktas",
-   "ev_ad": "Konyaspor",
-   "dep_ad": "Beşiktaş",
-   "hafta": "12. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/konyaspor-YazuCbCE/besiktas-IDmErJCR/haberler/?mid=S6Lsm3p4",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": "Konyaspor",
-     "oyuncu": "Adil Demirbag",
-     "durum": "yok",
-     "neden": "sakatlık"
-    }
-   ]
-  },
-  {
    "mid": "rsY1zQ0b",
    "tarih": "2026-11-22 16:00",
    "ev": "Trabzonspor",
@@ -72,7 +22,7 @@
    "dep_ad": "Eyüpspor",
    "hafta": "12. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/trabzonspor-MmsYDc03/eyupspor-276zKCgt/haberler/?mid=rsY1zQ0b",
-   "onizleme": false,
+   "onizleme": true,
    "eksik": []
   },
   {
