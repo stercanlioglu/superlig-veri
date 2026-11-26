@@ -1,5 +1,5 @@
 {
- "cekildi": "2026-11-25 15:46 UTC",
+ "cekildi": "2026-11-26 15:28 UTC",
  "maclar": [
   {
    "mid": "AoHUcKbM",
@@ -10,8 +10,15 @@
    "dep_ad": "Konyaspor",
    "hafta": "13. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/alanyaspor-IcN8oPcJ/konyaspor-YazuCbCE/haberler/?mid=AoHUcKbM",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Chidozie Awaziem’in",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "6H20hbMq",
@@ -22,8 +29,15 @@
    "dep_ad": "Kasımpaşa",
    "hafta": "13. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/rizespor-EFRnJdkr/kasimpasa-dOlaIG4l/haberler/?mid=6H20hbMq",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Can Bozdoğan",
+     "durum": "yok",
+     "neden": "diğer"
+    }
+   ]
   },
   {
    "mid": "6HMshkS0",
@@ -34,8 +48,15 @@
    "dep_ad": "Gençlerbirliği",
    "hafta": "13. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/samsunspor-pSc6z7bf/genclerbirligi-GOPqBIRK/haberler/?mid=6HMshkS0",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Yunus Cift",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "ADeF12ac",
@@ -70,6 +91,18 @@
    "dep_ad": "Başakşehir",
    "hafta": "13. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/eyupspor-276zKCgt/basaksehir-YqP5NmC1/haberler/?mid=IwaNatU9",
+   "onizleme": false,
+   "eksik": []
+  },
+  {
+   "mid": "E1d2CJDF",
+   "tarih": "2026-11-29 16:00",
+   "ev": "Fenerbahce",
+   "dep": "Erzurum BB",
+   "ev_ad": "Fenerbahçe",
+   "dep_ad": "Erzurumspor",
+   "hafta": "13. Maç Günü",
+   "url": "https://www.livesport.com/tr/mac/futbol/fenerbahce-MsbmracL/erzurumspor-fk-xQZ3CpVE/haberler/?mid=E1d2CJDF",
    "onizleme": false,
    "eksik": []
   }
