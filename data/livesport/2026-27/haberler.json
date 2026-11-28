@@ -1,63 +1,6 @@
 {
- "cekildi": "2026-11-27 15:58 UTC",
+ "cekildi": "2026-11-28 14:22 UTC",
  "maclar": [
-  {
-   "mid": "AoHUcKbM",
-   "tarih": "2026-11-27 17:00",
-   "ev": "Alanyaspor",
-   "dep": "Konyaspor",
-   "ev_ad": "Alanyaspor",
-   "dep_ad": "Konyaspor",
-   "hafta": "13. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/alanyaspor-IcN8oPcJ/konyaspor-YazuCbCE/haberler/?mid=AoHUcKbM",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Chidozie Awaziem’in",
-     "durum": "yok",
-     "neden": "sakatlık"
-    }
-   ]
-  },
-  {
-   "mid": "6H20hbMq",
-   "tarih": "2026-11-27 17:00",
-   "ev": "Rizespor",
-   "dep": "Kasimpasa",
-   "ev_ad": "Rizespor",
-   "dep_ad": "Kasımpaşa",
-   "hafta": "13. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/rizespor-EFRnJdkr/kasimpasa-dOlaIG4l/haberler/?mid=6H20hbMq",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Can Bozdoğan",
-     "durum": "yok",
-     "neden": "diğer"
-    }
-   ]
-  },
-  {
-   "mid": "6HMshkS0",
-   "tarih": "2026-11-28 13:00",
-   "ev": "Samsunspor",
-   "dep": "Genclerbirligi",
-   "ev_ad": "Samsunspor",
-   "dep_ad": "Gençlerbirliği",
-   "hafta": "13. Maç Günü",
-   "url": "https://www.livesport.com/tr/mac/futbol/samsunspor-pSc6z7bf/genclerbirligi-GOPqBIRK/haberler/?mid=6HMshkS0",
-   "onizleme": true,
-   "eksik": [
-    {
-     "takim": null,
-     "oyuncu": "Yunus Cift",
-     "durum": "yok",
-     "neden": "sakatlık"
-    }
-   ]
-  },
   {
    "mid": "ADeF12ac",
    "tarih": "2026-11-28 16:00",
@@ -79,8 +22,15 @@
    "dep_ad": "Kocaelispor",
    "hafta": "13. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/corum-fk-0vne21BK/kocaelispor-hfvQIzKf/haberler/?mid=tlbfEuq3",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Massadio Haidara",
+     "durum": "yok",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "IwaNatU9",
@@ -91,8 +41,21 @@
    "dep_ad": "Başakşehir",
    "hafta": "13. Maç Günü",
    "url": "https://www.livesport.com/tr/mac/futbol/eyupspor-276zKCgt/basaksehir-YqP5NmC1/haberler/?mid=IwaNatU9",
-   "onizleme": false,
-   "eksik": []
+   "onizleme": true,
+   "eksik": [
+    {
+     "takim": null,
+     "oyuncu": "Bilal Boutobba",
+     "durum": "supheli",
+     "neden": "sakatlık"
+    },
+    {
+     "takim": null,
+     "oyuncu": "Lenny Pintor’un",
+     "durum": "supheli",
+     "neden": "sakatlık"
+    }
+   ]
   },
   {
    "mid": "E1d2CJDF",
